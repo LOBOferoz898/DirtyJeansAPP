@@ -1,0 +1,71 @@
+<app-header backButton="auth-admin" title="Registrarse"></app-header>
+
+
+<ion-content>
+  <div class="d-flex-center">
+  <form [formGroup]="form" class="auth-form" (ngSubmit)="submit()" (keypress.enter)="submit()">
+
+    <app-logo-admin></app-logo-admin>
+
+    <!--=========== RUT  =============-->
+    <app-custom-input autocomplete="rut" icon=""
+    [control]="form.controls.rut" type="text" label="rut"></app-custom-input>
+
+    <div class="validators" *ngIf="form.controls.rut.errors && form.controls.rut.touched">
+        <div *ngIf="form.controls.rut.errors?.['required']">Campo Obligatorio</div>
+    </div>
+
+
+    <!--=========== NOMBRE  =============-->
+    <app-custom-input autocomplete="nombre" icon=""
+    [control]="form.controls.nombre" type="text" label="nombre"></app-custom-input>
+
+    <div class="validators" *ngIf="form.controls.nombre.errors && form.controls.nombre.touched">
+        <div *ngIf="form.controls.nombre.errors?.['required']">Campo Obligatorio</div>
+    </div>
+
+
+    <!--=========== APELLIDO PATERNO =============-->
+    <app-custom-input autocomplete="appaterno" icon=""
+    [control]="form.controls.appaterno" type="text" label="apellidoPaterno"></app-custom-input>
+
+    <div class="validators" *ngIf="form.controls.appaterno.errors && form.controls.appaterno.touched">
+        <div *ngIf="form.controls.appaterno.errors?.['required']">Campo Obligatorio</div>
+    </div>
+
+    <!--=========== APELLIDO MATERNO =============-->
+    <app-custom-input autocomplete="apmaterno" icon=""
+    [control]="form.controls.apmaterno" type="text" label="appaterno"></app-custom-input>
+
+    <div class="validators" *ngIf="form.controls.apmaterno.errors && form.controls.apmaterno.touched">
+        <div *ngIf="form.controls.apmaterno.errors?.['required']">Campo Obligatorio</div>
+    </div>
+    <!--===========  EMAIL  =============-->
+    <app-custom-input autocomplete="email" icon="mail-outline"
+    [control]="form.controls.email" type="email" label="Correo"></app-custom-input>
+
+    <div class="validators" *ngIf="form.controls.email.errors && form.controls.email.touched">
+      <div *ngIf="form.controls.email.errors?.['required']">Campo Obligatorio</div>
+      <div *ngIf="form.controls.email.errors?.['email']">Ingrese un correo valido</div>
+    </div>
+
+
+    <!--===========  PASSWORD  =============-->
+    <app-custom-input autocomplete="password" icon="bag-outline"
+    [control]="form.controls.password" icon="lock-closed-outline" type="password" label="password"></app-custom-input>
+
+    <div class="validators" *ngIf="form.controls.password.errors && form.controls.password.touched">
+      <div *ngIf="form.controls.password.errors?.['required']">Campo Obligatorio</div>
+    </div>
+    
+
+
+    <ion-button expand="block" mode="ios" type="submit" class="submit" [disabled]="form.invalid">
+        Registrarse
+      <ion-icon slot="end" name="log-in-outline"></ion-icon>
+    </ion-button> 
+  </form>
+
+
+</div>
+</ion-content>

@@ -1,0 +1,21 @@
+<app-header title="Home Admin"></app-header>
+<ion-content>
+<div class="d-flex-center">
+    <ion-button class="ion-margin-top" routerLink="productos" expand="block" mode="ios" fill="outline">
+      Productos
+    </ion-button> 
+
+    <ion-button class="ion-margin-top" routerLink="colaboradores" expand="block" mode="ios" fill="outline">
+      Colaboradores
+    </ion-button> 
+
+    <ion-button class="ion-margin-top" routerLink="informe-pagos" expand="block" mode="ios" fill="outline">
+      Informe Pago
+    </ion-button> 
+
+    <ion-button (click)="signOut()">
+      Cerrar Session
+    </ion-button> 
+
+</div>
+</ion-content>

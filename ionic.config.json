@@ -1,0 +1,7 @@
+{
+  "name": "DirtyJeans-proyect-ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
